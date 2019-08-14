@@ -1,9 +1,11 @@
 <template>
-  <v-app>
-    <v-content>
-      <RouterView />
-    </v-content>
-  </v-app>
+  <VApp>
+    <VContent>
+      <VContainer>
+        <RouterView />
+      </VContainer>
+    </VContent>
+  </VApp>
 </template>
 
 <script>
