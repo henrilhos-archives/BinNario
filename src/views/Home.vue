@@ -1,15 +1,35 @@
 <template>
   <VRow>
-    <VCol cols="12" md="8">
+    <VCol class="display-1" cols="12">
+      BinNário
+    </VCol>
+    <VCol cols="12">
       <VCard class="pa-5 text-center">
         <div v-if="actualNumber" class="display-4 mb-6">
           {{ actualNumber }}
         </div>
-        <VBtn large color="primary" @click="getNumber()">Sortear</VBtn>
+        <VBtn
+          large
+          color="primary"
+          :disabled="numbers.length == 0"
+          @click="getNumber()"
+          >Sortear</VBtn
+        >
       </VCard>
     </VCol>
-    <VCol cols="12" md="4">
-      <VCard class="pa-5">{{ sortedNumbers }}</VCard>
+    <VCol cols="12">
+      <VCard class="text-center pa-5">
+        <VRow>
+          <VCol
+            v-for="num in sortedNumbers"
+            :key="num"
+            cols="3"
+            class="display-1"
+            style="padding: 5px !important;"
+            >{{ num }}</VCol
+          >
+        </VRow>
+      </VCard>
     </VCol>
   </VRow>
 </template>
@@ -34,7 +54,7 @@ export default {
     getNumber() {
       const num = this.numbers.shift();
 
-      if (this.actualNumber) this.sortedNumbers.push(this.actualNumber);
+      if (this.actualNumber) this.sortedNumbers.unshift(this.actualNumber);
       this.actualNumber = num;
     }
   }
