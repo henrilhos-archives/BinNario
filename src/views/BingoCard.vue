@@ -13,7 +13,16 @@
             :offset="borders.indexOf(n) != -1 ? '1' : '0'"
             style="padding: 1px !important;"
           >
-            <VCard flat outlined tile class="pa-2 text-center">{{ num }}</VCard>
+            <VCard
+              flat
+              outlined
+              tile
+              class="pa-2 text-center"
+              :color="num.selected ? 'grey lighten-1' : ''"
+              @click="num.selected = !num.selected"
+            >
+              {{ num.value }}
+            </VCard>
           </VCol>
         </VRow>
       </VCard>
@@ -42,11 +51,11 @@ export default {
     getNumbers(numList) {
       let list = [];
       for (let i = 1; i < 25; i += 1) {
-        list.push(numList.shift());
+        list.push({ value: numList.shift(), selected: false });
       }
 
       list = list.sort();
-      list.splice(12, 0, 'BINGO');
+      list.splice(12, 0, { value: 'BINGO', selected: false });
 
       return list;
     }

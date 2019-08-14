@@ -18,7 +18,7 @@
       </VCard>
     </VCol>
     <VCol cols="12">
-      <VCard class="text-center pa-5">
+      <VCard v-if="sortedNumbers.length > 0" class="text-center pa-5">
         <VRow>
           <VCol
             v-for="num in sortedNumbers"
