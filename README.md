@@ -1,4 +1,4 @@
-# binnario
+# BinNário
 
 ## Project setup
 ```
