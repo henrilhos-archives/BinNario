@@ -1,5 +1,5 @@
 <template>
-  <VRow>
+  <VRow align="center" justify="center">
     <VCol cols="12" md="8">
       <VCard class="pa-5">
         {{ actualNumber }}
