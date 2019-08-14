@@ -1,9 +1,11 @@
 <template>
-  <VRow align="center" justify="center">
+  <VRow>
     <VCol cols="12" md="8">
-      <VCard class="pa-5">
-        {{ actualNumber }}
-        <VBtn color="primary" @click="getNumber()">Sortear</VBtn>
+      <VCard class="pa-5 text-center">
+        <div v-if="actualNumber" class="display-4 mb-6">
+          {{ actualNumber }}
+        </div>
+        <VBtn large color="primary" @click="getNumber()">Sortear</VBtn>
       </VCard>
     </VCol>
     <VCol cols="12" md="4">
