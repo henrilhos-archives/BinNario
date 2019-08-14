@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/recommended",
+    "@vue/airbnb",
+    "@vue/prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["vuetify"],
+  "rules": {
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "vuetify/no-deprecated-classes": "error",
+    "vuetify/grid-unknown-attributes": "error",
+    "vuetify/no-legacy-grid": "error"
+  },
+  "parserOptions": {
+    "parser": "babel-eslint"
+  }
+}
