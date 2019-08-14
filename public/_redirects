@@ -1,0 +1,5 @@
+# Redirect default Netlify subdomain to primary domain
+https://binnario.netlify.com/* https://binnario.hcastilhos.com/:splat 301!
+
+# Netlify settings for single-page application
+/*    /index.html   200
